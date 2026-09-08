@@ -1,0 +1,164 @@
+/* Секция Профиль пользователя */
+.user-profile {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Расстояние между элементами */
+}
+
+/* Общие стили для canvas */
+#skin_container {
+    margin: 0;
+    padding: 15px; /* Если нужен внутренний отступ */
+    border: 3px solid #2c3e50;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1e2a38, #34495e);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#info_container {
+    margin: 0;
+    padding: 15px; /* Если нужен внутренний отступ */
+    border: 3px solid #2c3e50;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1e2a38, #34495e);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: auto;
+}
+
+/* Убираем margin, чтобы элементы не сдвигались */
+.info-profile {
+    flex: 1;
+}
+
+/* Секция комментариев */
+.comments-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #ecf0f1;
+}
+
+.comments-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 5px;
+    color: #f1c40f;
+}
+
+.comments-section .comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.comments-section .comment-form .comment-input {
+    display: flex;
+    align-items: stretch;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.comments-section .comment-form textarea {
+    flex: 1;
+    height: 60px;
+    padding: 15px;
+    border: none;
+    background-color: #1e2a38;
+    color: #ecf0f1;
+    resize: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.comments-section .comment-form textarea::placeholder {
+    color: #7f8c8d;
+}
+
+.comments-section .comment-form button {
+    background-color: #f1c40f;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.comments-section .comment-form button:hover {
+    background-color: #d4ac0d;
+}
+
+.comments-list {
+    margin-top: 20px; /* Add space between the input and first comment */
+}
+
+.comments-list .comment {
+    margin: 0; /* Убираем стандартные отступы */
+    padding-left: 50px; /* Отступ вправо, чтобы текст находился под ником */
+    line-height: 1.5;
+    color: #ecf0f1; /* Цвет текста */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #34495e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* For positioning delete button */
+}
+
+.comments-list .comment .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comments-list .comment img {
+    width: 40px; /* Size of avatar */
+    height: 40px; /* Size of avatar */
+    margin-right: 10px; /* Space between avatar and user info */
+}
+
+.comments-list .comment strong {
+    font-size: 1.2rem;
+    color: #f1c40f;
+}
+
+.comments-list .comment .date {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-left: 8px;
+}
+
+.comments-list .comment p {
+    margin: 0;
+    margin-left: 63px; /* Отступ текста комментария */
+    line-height: 1.5;
+    color: #ecf0f1; /* Цвет текста */
+}
+
+.comments-list .comment .delete-comment {
+    /* Исправляем позиционирование кнопки удаления */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.comments-list .comment .delete-comment img {
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    opacity: 0.7; /* Slightly transparent */
+}
+
+.comments-list .comment .delete-comment img:hover {
+    opacity: 1; /* Full opacity on hover */
+}

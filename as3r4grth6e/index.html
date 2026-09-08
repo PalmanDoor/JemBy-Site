@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModCraft - Minecraft Modded Servers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Анимированный фон */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .cube {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .cube:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .cube:nth-child(2) { top: 20%; left: 80%; animation-delay: 1s; }
+        .cube:nth-child(3) { top: 70%; left: 20%; animation-delay: 2s; }
+        .cube:nth-child(4) { top: 50%; left: 90%; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Шапка сайта */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Главный контент */
+        main {
+            margin-top: 100px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(76, 175, 80, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A, #CDDC39);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(76, 175, 80, 0.5); }
+            to { text-shadow: 0 0 30px rgba(76, 175, 80, 0.8); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.5);
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Секции */
+        .section {
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Список серверов */
+        .servers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .server-card {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .server-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .server-card:hover::before {
+            left: 100%;
+        }
+
+        .server-card:hover {
+            transform: scale(1.05);
+            border-color: #4CAF50;
+            box-shadow: 0 15px 30px rgba(76, 175, 80, 0.3);
+        }
+
+        .server-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .online { background: #4CAF50; color: white; }
+        .offline { background: #f44336; color: white; }
+
+        /* Личный кабинет */
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .skin-preview {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skin-model {
+            width: 200px;
+            height: 300px;
+            background: linear-gradient(45deg, #333, #555);
+            margin: 0 auto 1rem;
+            border-radius: 10px;
+            position: relative;
+            animation: skinRotate 8s linear infinite;
+        }
+
+        @keyframes skinRotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .upload-btn {
+            background: linear-gradient(45deg, #2196F3, #03DAC6);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(33, 150, 243, 0.3);
+        }
+
+        /* Статистика */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+            display: block;
+        }
+
+        /* Футер */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Мобильная адаптация */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .profile-section { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* Дополнительные анимации */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #4CAF50;
+            border-radius: 50%;
+            animation: particle-float 8s infinite ease-in-out;
+        }
+
+        @keyframes particle-float {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 1; }
+            50% { transform: translateY(-100px) translateX(50px); opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">ModCraft</div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#servers">Серверы</a></li>
+                <li><a href="#mods">Моды</a></li>
+                <li><a href="#profile">Профиль</a></li>
+                <li><a href="#support">Поддержка</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero fade-in" id="home">
+            <div class="hero-content">
+                <h1>ModCraft Network</h1>
+                <p>Лучшие модовые сервера Minecraft с уникальным контентом</p>
+                <a href="#" class="download-btn" onclick="downloadLauncher()">
+                    📥 Скачать лаунчер
+                </a>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <h2>О проекте</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number" id="players">1,247</span>
+                    <span>Игроков онлайн</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15</span>
+                    <span>Серверов</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">350+</span>
+                    <span>Модов</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">24/7</span>
+                    <span>Поддержка</span>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem; line-height: 1.6;">
+                ModCraft - это крупнейшая сеть модовых серверов Minecraft в СНГ. Мы предлагаем уникальные сборки модов, 
+                стабильную работу серверов и дружелюбное сообщество. Присоединяйся к тысячам игроков уже сегодня!
+            </p>
+        </section>
+
+        <section class="section fade-in" id="servers">
+            <h2>Наши серверы</h2>
+            <div class="servers-grid">
+                <div class="server-card">
+                    <div class="server-status online">🟢 Онлайн</div>
+                    <h3>TechnoMagic</h3>
+                    <p>Сборка с техно-магическими модами. Industrial Craft, Thaumcraft, Botania и многое другое!</p>
+                    <p><strong>Игроков:</strong> <span id="server1-players">156/300</span></p>
+                    <p><strong>Версия:</strong> 1.12.2</p>
+                </div>
+                <div class="server-card">
+                    <div class="server-status online">🟢 Онлайн</div>
+                    <h3>Medieval Fantasy</h3>
+                    <p>Средневековая фантазийная сборка с драконами, замками и магией.</p>
+                    <p><strong>Игроков:</strong> <span id="server2-players">89/200</span></p>
+                    <p><strong>Версия:</strong> 1.16.5</p>
+                </div>
+                <div class="server-card">
+                    <div class="server-status online">🟢 Онлайн</div>
+                    <h3>Space Adventure</h3>
+                    <p>Космическая одиссея с Galacticraft, Advanced Rocketry и исследованием планет.</p>
+                    <p><strong>Игроков:</strong> <span id="server3-players">234/400</span></p>
+                    <p><strong>Версия:</strong> 1.16.5</p>
+                </div>
+                <div class="server-card">
+                    <div class="server-status online">🟢 Онлайн</div>
+                    <h3>Hardcore Tech</h3>
+                    <p>Сложная техническая сборка для опытных игроков. GregTech и другие хардкорные моды.</p>
+                    <p><strong>Игроков:</strong> <span id="server4-players">67/150</span></p>
+                    <p><strong>Версия:</strong> 1.12.2</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fade-in" id="profile">
+            <h2>Личный кабинет</h2>
+            <div class="profile-section">
+                <div class="skin-preview">
+                    <h3>Предварительный просмотр скина</h3>
+                    <div class="skin-model"></div>
+                    <button class="upload-btn" onclick="uploadSkin()">🎨 Загрузить скин</button>
+                    <button class="upload-btn" onclick="uploadCape()">🦸 Загрузить плащ</button>
+                </div>
+                <div class="skin-preview">
+                    <h3>Настройки профиля</h3>
+                    <div style="text-align: left; margin-top: 2rem;">
+                        <p><strong>Никнейм:</strong> <span style="color: #4CAF50;">Player_123</span></p>
+                        <p><strong>Уровень:</strong> <span style="color: #8BC34A;">Veteran</span></p>
+                        <p><strong>Время игры:</strong> 247 часов</p>
+                        <p><strong>Статус:</strong> <span style="color: #4CAF50;">Premium</span></p>
+                        <br>
+                        <button class="upload-btn">⚙️ Настройки</button>
+                        <button class="upload-btn">💰 Донат</button>
+                        <button class="upload-btn">📊 Статистика</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ModCraft Network. Все права защищены.</p>
+        <p>Minecraft является товарным знаком Mojang Studios</p>
+    </footer>
+
+    <script>
+        // Анимация счетчика игроков
+        function animateNumber(elementId, targetNumber, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const startNumber = 0;
+            const increment = targetNumber / (duration / 16);
+            let currentNumber = startNumber;
+
+            const timer = setInterval(() => {
+                currentNumber += increment;
+                if (currentNumber >= targetNumber) {
+                    currentNumber = targetNumber;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(currentNumber).toLocaleString();
+            }, 16);
+        }
+
+        // Запуск анимации при загрузке страницы
+        window.addEventListener('load', () => {
+            animateNumber('players', 1247);
+        });
+
+        // Функция скачивания лаунчера
+        function downloadLauncher() {
+            alert('🎮 Начинается скачивание лаунчера ModCraft!\n\nВерсия: 2.1.5\nРазмер: 45 МБ\n\nПосле установки вы сможете подключиться ко всем нашим серверам!');
+        }
+
+        // Функция загрузки скина
+        function uploadSkin() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.png';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    alert(`✅ Скин "${file.name}" успешно загружен!\n\nИзменения вступят в силу через несколько минут.`);
+                }
+            };
+            input.click();
+        }
+
+        // Функция загрузки плаща
+        function uploadCape() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.png';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    alert(`🦸 Плащ "${file.name}" успешно загружен!\n\nПлащи доступны только Premium игрокам.`);
+                }
+            };
+            input.click();
+        }
+
+        // Эффект частиц
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Создание частиц каждые 2 секунды
+        setInterval(createParticle, 2000);
+
+        // Плавная прокрутка для навигации
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Изменение прозрачности шапки при прокрутке
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrolled = window.pageYOffset;
+            const opacity = Math.min(scrolled / 100, 1);
+            header.style.backgroundColor = `rgba(0, 0, 0, ${0.3 + opacity * 0.7})`;
+        });
+
+        // Обновление количества игроков на серверах (имитация)
+        function updateServerStats() {
+            const servers = [
+                { id: 'server1-players', base: 156, max: 300 },
+                { id: 'server2-players', base: 89, max: 200 },
+                { id: 'server3-players', base: 234, max: 400 },
+                { id: 'server4-players', base: 67, max: 150 }
+            ];
+
+            servers.forEach(server => {
+                const element = document.getElementById(server.id);
+                const variation = Math.floor(Math.random() * 20) - 10;
+                const newCount = Math.max(0, Math.min(server.base + variation, server.max));
+                element.textContent = `${newCount}/${server.max}`;
+            });
+        }
+
+        // Обновление статистики каждые 30 секунд
+        setInterval(updateServerStats, 30000);
+
+        // Добавление fade-in анимации при прокрутке
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
