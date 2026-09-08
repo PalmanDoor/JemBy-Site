@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+/* Общие стили для скриншотов */
+.css-screenshots {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.screenshot-container {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.separator1 {
+    background-color: #131313;
+}
+
+.screenshot-info {
+    color: #777;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.delete-screenshot-btn {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.delete-screenshot-btn:hover {
+    background-color: #D9534F;
+}
+
+.file-input-wrapper {
+    position: absolute;
+    overflow: hidden;
+    margin-top: -10px;
+    padding: 12px 12px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-label {
+    margin-right: 10px;
+}
+
+.file-input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-button {
+    background-color: #4CAF50;
+    color: white;
+	margin-top: -10px;
+	margin-left: 290px;
+    padding: 12px 12px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #45a049;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.333% - 10px);
+    box-sizing: border-box;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pages a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pages a:hover {
+    background-color: #555;
+}

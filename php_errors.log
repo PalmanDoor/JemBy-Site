@@ -1,0 +1,55 @@
+[23-Apr-2025 15:51:27 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:51:27 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:51:32 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:51:32 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:51:37 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:51:37 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:51:42 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:51:42 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:51:47 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:51:50 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:51:50 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:51:52 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:51:52 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:51:58 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:51:58 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:11 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:11 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:11 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:11 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:16 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:16 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:21 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:21 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:27 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:27 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:32 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:32 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:37 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:37 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:42 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:42 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:47 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:47 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:52 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:52 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:52:57 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:52:57 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:53:02 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:53:02 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:53:07 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:53:07 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:53:12 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:53:12 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:53:17 Europe/Moscow] PHP Notice:  session_start(): A session had already been started - ignoring in C:\OSPanel\domains\JemBy\db.php on line 2
+[23-Apr-2025 15:53:17 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:53:22 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:53:55 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:53:56 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:54:01 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:54:06 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:54:11 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:54:16 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:54:21 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:54:26 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number
+[23-Apr-2025 15:54:31 Europe/Moscow] Database error in get_voice_users.php: SQLSTATE[HY093]: Invalid parameter number

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /as3r4grth6e/
+Disallow: /db.php
+Disallow: /admincp.php
+Disallow: /delete_news.php
+Allow: /

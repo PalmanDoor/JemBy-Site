@@ -1,0 +1,14 @@
+{
+    "name": "administrator/jem-by",
+    "autoload": {
+        "psr-4": {
+            "Administrator\\JemBy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sonia"
+        }
+    ],
+    "require": {}
+}

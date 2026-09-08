@@ -1,0 +1,53 @@
+.admin-form {
+	margin-top: 0;
+	padding-left: 15px;
+}
+
+.admin-textarea {
+	border-color: #131313;
+    border: 2px solid;
+	border-radius: 2px;
+}
+
+.admin-container {
+	display: center;
+	flex-direction: column-reverse;
+	justify-content: flex-end;
+}
+
+select {
+	border-color: #131313;
+    border: 2px solid;
+    border-radius: 10px;
+	margin-top: 0;
+	margin-left: 15px;
+	padding-left: 0;
+	
+}
+
+.admin-input {
+	border-color: #131313;
+    border: 2px solid;
+    border-radius: 10px;
+	margin-left: -15px;
+	margin-top: 8px;
+	
+}
+
+.admin-input-log {
+	border-color: #131313;
+    border: 2px solid;
+    border-radius: 10px;
+	margin-left: 15px;
+	margin-top: 8px;
+	
+}
+
+.admin-input-update-user {
+	border-color: #131313;
+    border: 2px solid;
+    border-radius: 10px;
+	margin-left: 0px;
+	margin-top: 8px;
+	
+}

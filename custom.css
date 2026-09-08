@@ -1,0 +1,31 @@
+/* custom.css */
+
+.textdescription {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.textdescription a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.textdescription a:hover {
+    text-decoration: underline;
+}
+
+/* Добавьте дополнительные стили по мере необходимости */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
