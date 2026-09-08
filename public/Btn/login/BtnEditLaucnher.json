@@ -1,0 +1,16 @@
+{
+    "buttons": [
+        {
+            "label": "Создать аккаунт",
+            "action": "createAccount"
+        },
+        {
+            "label": "Discord",
+            "action": "openDiscord"
+        },
+        {
+            "label": "Документация",
+            "action": "openDocs"
+        }
+    ]
+}
